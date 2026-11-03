@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101d35">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Orbit日程">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Orbit 日程 · Student Life OS</title>
+<style>
+:root{--navy:#101d35;--blue:#d4e5ff;--ink:#17233a;--muted:#667085;--bg:#f4f6fa;--card:#fff;--line:#e5e9f0;--green:#76a98d;--lav:#b7a2df;--shadow:0 8px 24px #1020400c}
+*{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:var(--ink);padding:env(safe-area-inset-top) 0 calc(86px + env(safe-area-inset-bottom));background:var(--bg)}button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}.app{max-width:680px;margin:0 auto;min-height:100vh}.hero{background:var(--navy);color:white;padding:22px 20px 18px;border-radius:0 0 26px 26px}.brand{display:flex;align-items:center;gap:10px}.orb{width:44px;height:44px;border-radius:14px;background:#b9d7ff;color:#152d51;display:grid;place-items:center;font-size:25px}.brand small{display:block;color:#b7c7e0;font-size:11px;letter-spacing:.4px;margin-top:3px}.version{margin-left:auto;border:1px solid #52627c;border-radius:99px;padding:6px 9px;font-size:10px;color:#d8e5f7}.hero h1{font-size:27px;line-height:1.2;margin:20px 0 7px;letter-spacing:-.6px}.hero p{color:#d0d9e8;font-size:13px;line-height:1.5;margin:0 0 17px}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.tab{border:0;border-radius:13px;padding:10px 5px;background:#253650;color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;gap:6px}.tab.active{background:var(--blue);color:#17345c;font-weight:700}.content{padding:18px 15px;max-width:680px;margin:auto}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:2px 0 15px}.sectionhead h2{font-size:21px;margin:0 0 5px}.sub{font-size:12px;color:var(--muted);line-height:1.5}.icon{font-size:23px}.switch{display:flex;background:#e8ebf1;border-radius:12px;padding:4px;gap:4px;margin-bottom:14px}.switch button{flex:1;border:0;background:transparent;padding:10px 5px;border-radius:9px;color:#566176;font-size:12px}.switch button.active{background:#fff;color:#18263e;box-shadow:0 1px 4px #15234012;font-weight:700}.summary{border-radius:18px;background:#eaf0fa;padding:16px;margin-bottom:16px}.summary .kicker{font-size:11px;color:#5e6f8e;margin-bottom:7px}.summary strong{display:block;font-size:25px;letter-spacing:-.5px;margin-bottom:5px}.summary p{font-size:12px;color:#53627b;margin:0;line-height:1.5}.timeline{display:flex;flex-direction:column;gap:0}.event{display:grid;grid-template-columns:5px minmax(0,1fr);gap:13px;padding:0 0 15px}.rail{border-radius:8px;background:#c6cdd7}.event.study .rail{background:#7898d4}.event.fun .rail{background:var(--lav)}.event.health .rail{background:#82b9a1}.eventbody{padding:1px 0 0}.eventtop{display:flex;justify-content:space-between;gap:8px;align-items:center}.time{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}.badge{font-size:10px;padding:4px 7px;border-radius:99px;background:#eef1f5;color:#596579;white-space:nowrap}.event h3{font-size:15px;margin:8px 0 4px}.event p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:13px;box-shadow:var(--shadow)}.panel h3{font-size:16px;margin:0 0 6px}.panel p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}.btn{border:0;border-radius:12px;background:var(--navy);color:#fff;padding:12px 14px;font-weight:650;font-size:13px;width:100%;margin-top:12px}.btn.secondary{background:#edf1f7;color:#24334d}.btn.outline{background:white;color:var(--ink);border:1px solid var(--line)}.row{display:flex;align-items:center;gap:10px}.grow{flex:1;min-width:0}.choice{display:grid;gap:8px;margin-top:10px}.choice button{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);border-radius:12px;background:white;padding:12px;color:var(--ink);font-size:13px}.choice button.selected{border-color:#6f8fc6;background:#f0f5ff}.dot{width:17px;height:17px;border-radius:50%;border:1.5px solid #b6c0d0;display:grid;place-items:center;flex-shrink:0}.selected .dot{background:#315d9d;border-color:#315d9d;color:white;font-size:11px}.timerbox{text-align:center;padding:24px 12px;background:#edf2fa;border-radius:18px;margin-top:12px}.timerface{font-size:55px;letter-spacing:-2px;font-weight:650;font-variant-numeric:tabular-nums;margin:14px 0}.timerlabel{font-size:12px;color:#5f6e85}.timercontrols{display:flex;gap:8px}.timercontrols button{flex:1}.task{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:14px;background:white;padding:13px;margin-top:8px;text-align:left;width:100%;color:var(--ink)}.check{width:22px;height:22px;border:1.5px solid #aab4c4;border-radius:50%;display:grid;place-items:center;flex-shrink:0;color:white}.task.done .check{background:#4d9a76;border-color:#4d9a76}.task.done .tasktitle{text-decoration:line-through;color:#7a8493}.tasktitle{font-size:13px;font-weight:650}.taskdetail{font-size:11px;color:var(--muted);margin-top:4px}.progressrow{display:flex;align-items:center;justify-content:space-between;margin:18px 0 9px}.progress{height:7px;border-radius:99px;background:#e8ecf2;overflow:hidden}.progress span{height:100%;display:block;background:var(--green);border-radius:99px;transition:width .2s}.tools{display:grid;gap:9px}.tool{display:flex;align-items:center;gap:12px;text-align:left;border:1px solid var(--line);background:white;border-radius:14px;padding:13px;color:var(--ink)}.tool .emoji{font-size:22px}.tool strong{display:block;font-size:13px;margin-bottom:4px}.tool small{color:var(--muted);font-size:11px}.footer{padding:12px 17px 0;color:#8993a3;font-size:10px;line-height:1.5}.hidden{display:none!important}.toast{position:fixed;left:50%;bottom:calc(94px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#17233a;color:white;padding:11px 16px;border-radius:99px;font-size:12px;box-shadow:var(--shadow);z-index:10;max-width:90vw;text-align:center}.bottomnav{position:fixed;z-index:5;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(16px);border-top:1px solid #e5e9f0}.bottomnavinner{max-width:680px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.bottomnav button{border:0;background:transparent;border-radius:12px;padding:7px;color:#758095;font-size:10px;display:grid;gap:4px;justify-items:center}.bottomnav button.active{color:#234b83;background:#edf3fd}.bottomnav b{font-size:19px;font-weight:500}.tiny{font-size:10px;color:var(--muted);line-height:1.5}.input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:white;color:var(--ink);margin-top:8px}
+
+.calendar-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.month-title{font-size:17px;font-weight:750}.month-controls{display:flex;gap:6px}.month-controls button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;color:var(--ink)}.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}.weekday-label{text-align:center;font-size:10px;color:var(--muted);padding:6px 0}.calendar-day{aspect-ratio:1;border:1px solid transparent;border-radius:12px;background:#f4f6fa;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:12px;color:var(--ink);position:relative;min-width:0}.calendar-day.empty{background:transparent}.calendar-day.today{border-color:#8ca8d5;font-weight:750}.calendar-day.spark{background:#fff4d9;border-color:#f0d58b;color:#8a5c00}.calendar-day .spark-mark{font-size:13px;line-height:1}.calendar-day .day-num{line-height:1.1}.stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat-card{border-radius:16px;padding:15px;background:#edf2fa}.stat-card.gold{background:#fff4d9}.stat-num{font-size:27px;font-weight:800;letter-spacing:-.6px}.stat-label{font-size:11px;color:#5f6e85;margin-top:4px}.legend{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:12px}.legend span{display:flex;align-items:center;gap:5px}.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;background:#fff4d9;border:1px solid #f0d58b}
+
+@media(min-width:600px){.hero{border-radius:0 0 28px 28px;padding:26px 28px 20px}.content{padding:22px 28px}.hero h1{font-size:31px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="hero">
+  <div class="brand"><div class="orb">◉</div><div><strong>Orbit 日程</strong><small>IGCSE G10 · STUDENT LIFE OS</small></div><span class="version">个人版 v2.0</span></div>
+  <h1>让每一天，都有自己的轨道。</h1><p>学习有计划，兴趣有时间，生活有节奏。</p>
+  <div class="tabs">
+    <button class="tab active" data-page="today">▦　今日计划</button>
+    <button class="tab" data-page="focus">◷　专注模式</button>
+    <button class="tab" data-page="habits">✓　每日打卡</button>
+  </div>
+</header>
+<main class="content">
+<section id="page-today">
+  <div class="sectionhead"><div><h2>我的时间表</h2><div class="sub">按你 15:30 放学的节奏设计</div></div><span class="icon">▤</span></div>
+  <div class="switch"><button class="active" data-day="weekday">周一至周五</button><button data-day="weekend">周末</button></div>
+  <div class="summary"><div class="kicker" id="summary-kicker">放学后 · 工作日</div><strong id="summary-time">15:30 — 22:15</strong><p id="summary-desc">先完成重要任务，再安心享受兴趣时间。</p></div>
+  <div class="timeline" id="timeline"></div>
+  <button class="btn" id="to-checklist">查看今日任务　→</button>
+  <div class="footer">通勤时间按 45 分钟以上估算。若实际到家较晚，请顺延日程，不要挤掉睡眠。</div>
+</section>
+<section id="page-focus" class="hidden">
+  <div class="sectionhead"><div><h2>专注模式</h2><div class="sub">选一个任务，先开始，不要求一次做完。</div></div><span class="icon">◷</span></div>
+  <div class="panel"><h3>本次专注任务</h3><p>选择你现在要推进的一件事。</p><div class="choice" id="focus-choices"></div></div>
+  <div class="panel"><h3>专注时长</h3><div class="switch" id="duration-switch"><button data-min="5">5 分钟</button><button data-min="15">15 分钟</button><button class="active" data-min="25">25 分钟</button><button data-min="45">45 分钟</button></div>
+  <div class="timerbox"><div class="timerlabel" id="timer-label">准备开始 · 数学</div><div class="timerface" id="timer">25:00</div><div class="timercontrols"><button class="btn" id="timer-start">开始</button><button class="btn secondary" id="timer-reset">重置</button></div><p class="tiny" style="margin-top:12px">离开页面后，iPhone 可能限制后台计时；回到页面时会自动校正剩余时间。</p></div></div>
+</section>
+<section id="page-habits" class="hidden">
+  <div class="sectionhead"><div><h2>每日打卡</h2><div class="sub" id="habit-date"></div></div><span class="icon">✓</span></div>
+  <div class="panel"><h3>小进步也算进步</h3><p>完成一项就勾选一项。记录保存在当前设备的浏览器中。</p><div class="progressrow"><strong id="progress-label">0/5 项完成</strong><span class="sub" id="progress-percent">0%</span></div><div class="progress"><span id="progress-bar" style="width:0%"></span></div><div id="tasks"></div><button class="btn outline" id="reset-tasks">重置今天打卡</button></div>
+  <div class="panel"><h3>添加自己的任务</h3><p>例如：整理相机照片、读英文原版书 10 分钟。</p><input class="input" id="custom-task" placeholder="输入一项自定义任务" maxlength="90"><button class="btn" id="add-task">＋ 添加任务</button><div id="custom-list"></div></div>
+</section>
+<section id="page-calendar" class="hidden">
+  <div class="sectionhead"><div><h2>我的坚持日历</h2><div class="sub">当天所有任务完成后，就点亮一颗火花 ✦</div></div><span class="icon">✦</span></div>
+  <div class="panel">
+    <div class="calendar-top"><button class="month-controls" id="month-prev" aria-label="上个月">‹</button><div class="month-title" id="month-title">2026年11月</div><button class="month-controls" id="month-next" aria-label="下个月">›</button></div>
+    <div class="calendar-grid" id="calendar-weekdays"></div><div class="calendar-grid" id="calendar-days"></div>
+    <div class="legend"><span><i></i> 完成全部任务的日子</span><span>圆框 = 今天</span></div>
+  </div>
+  <div class="stat-grid">
+    <div class="stat-card gold"><div class="stat-num" id="stat-total">0</div><div class="stat-label">累计火花天数</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-streak">0 天</div><div class="stat-label">当前连续完成</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-month">0</div><div class="stat-label">本月完成天数</div></div>
+    <div class="stat-card"><div class="stat-num" id="stat-best">0 天</div><div class="stat-label">最长连续记录</div></div>
+  </div>
+  <div class="panel" style="margin-top:13px"><h3>怎么点亮火花？</h3><p>进入「每日打卡」，完成当天所有默认任务和自定义任务，日历就会自动把那一天标记为 ✦。取消任何一项打卡，火花也会自动熄灭。数据保存在这台设备的浏览器中。</p><button class="btn" id="calendar-to-tasks">去完成今天的任务　→</button></div>
+</section>
+<section id="page-tools" class="hidden">
+  <div class="sectionhead"><div><h2>兴趣与规划</h2><div class="sub">让生活不只有考试</div></div><span class="icon">✦</span></div>
+  <div class="tools">
+    <button class="tool" data-tool="weekly"><span class="emoji">🎓</span><span><strong>生成每周复习计划</strong><small>按 IGCSE 科目分配任务</small></span><span>›</span></button>
+    <button class="tool" data-tool="procrastination"><span class="emoji">🎯</span><span><strong>拖延改善系统</strong><small>减少分心，降低开始难度</small></span><span>›</span></button>
+    <button class="tool" data-tool="astro"><span class="emoji">🔭</span><span><strong>天文摄影计划</strong><small>观星、拍摄练习和照片后期</small></span><span>›</span></button>
+  </div>
+  <div class="panel" style="margin-top:14px"><h3>本周科目轮换</h3><p>周一 数学 · 周二 Biology · 周三 Economics / Business · 周四 Spanish · 周五 错题复盘与英语阅读</p></div>
+  <div class="panel"><h3>iPhone 安装提示</h3><p>部署到 HTTPS 网站后，在 Safari 打开网址，点“分享”→“添加到主屏幕”，即可用独立窗口启动。此版本支持离线缓存（首次打开后）。</p></div>
+</section>
+</main>
+</div>
+<nav class="bottomnav"><div class="bottomnavinner">
+<button class="active" data-page="today"><b>▦</b>今日计划</button>
+<button data-page="focus"><b>◷</b>专注模式</button>
+<button data-page="habits"><b>✓</b>每日打卡</button>
+<button data-page="calendar"><b>✦</b>日历统计</button>
+</div></nav>
+<div id="toast" class="toast hidden"></div>
+<script>
+const weekday=[
+["15:30–16:20+","通勤回家","听音乐，放松大脑","生活","bus"],
+["到家后 25 分钟","休息和加餐","恢复精力，准备开始","休息","coffee"],
+["之后 45–60 分钟","学校作业","先做最紧急、最难的任务","学习","book-open"],
+["17:30–18:00 左右","运动","快走、骑车或室内运动","健康","activity"],
+["运动后 45 分钟","晚餐","吃饭和休息","生活","utensils"],
+["晚餐后 30–45 分钟","IGCSE 专项复习","完成今天的复习重点","学习","graduation-cap"],
+["约 19:30–20:45","兴趣自由时间","游戏、天文摄影或朋友社交","兴趣","gamepad-2"],
+["20:45–21:15","准备明天","整理书包，写下三项任务","生活","list-checks"],
+["21:15–22:15","洗澡、阅读、放松","减少屏幕刺激，准备入睡","休息","moon"]
+];
+const weekend=[
+["09:00–10:30","深度学习","考试题或重点章节","学习","book-open"],
+["10:30–11:00","休息","离开书桌，活动一下","休息","coffee"],
+["11:00–12:00","第二学习时段","复习薄弱科目或完成作业","学习","graduation-cap"],
+["12:00–14:00","午餐和休息","不安排学习任务","生活","utensils"],
+["14:00–18:00","户外和朋友时间","外出、摄影、逛书店或社交","兴趣","users"],
+["18:00–19:00","晚餐与运动","吃饭并完成当天运动","健康","activity"],
+["19:00–21:15","自由活动","游戏、阅读、天文摄影","兴趣","telescope"],
+["21:15–22:15","整理与睡前放松","准备新的一周","生活","moon"]
+];
+const focusItems=["数学","Biology","西班牙语","英语阅读","学校作业"];
+let dayMode=localStorage.getItem("orbit-day")||"weekday", page="today", selectedFocus=localStorage.getItem("orbit-focus")||"数学", duration=Number(localStorage.getItem("orbit-duration")||25), remaining=duration*60, endAt=null, interval=null;
+const todayKey=()=>new Date().toLocaleDateString("en-CA");
+const defaultTasks=[["homework","完成学校作业","先做最紧急的任务"],["revision","完成 IGCSE 复习","至少一个重点知识或题型"],["exercise","运动 20–30 分钟","散步也算"],["tomorrow","准备明天的书包","检查课程、作业和用品"],["sleep","按计划准备睡觉","尽量保证 8–10 小时睡眠"]];
+function loadState(){try{return JSON.parse(localStorage.getItem("orbit-state")||"{}")}catch{return {}}}
+function saveState(s){localStorage.setItem("orbit-state",JSON.stringify(s))}
+function dayState(){let s=loadState(),k=todayKey();if(!s[k])s[k]={checked:[],custom:[]};return s[k]}
+function updateDayState(fn){let s=loadState(),k=todayKey();if(!s[k])s[k]={checked:[],custom:[]};fn(s[k]);saveState(s)}
+function esc(x){return String(x).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderTimeline(){let list=dayMode==="weekday"?weekday:weekend;document.getElementById("summary-kicker").textContent=dayMode==="weekday"?"放学后 · 工作日":"周末 · 自主安排";document.getElementById("summary-time").textContent=dayMode==="weekday"?"15:30 — 22:15":"09:00 — 22:15";document.getElementById("summary-desc").textContent=dayMode==="weekday"?"先完成重要任务，再安心享受兴趣时间。":"上午集中学习，下午和晚上留给生活。";document.getElementById("timeline").innerHTML=list.map(e=>`<div class="event ${e[3]==="学习"?"study":e[3]==="兴趣"?"fun":e[3]==="健康"?"health":""}"><div class="rail"></div><div class="eventbody"><div class="eventtop"><span class="time">${e[0]}</span><span class="badge">${e[3]}</span></div><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join("");document.querySelectorAll("[data-day]").forEach(b=>b.classList.toggle("active",b.dataset.day===dayMode))}
+function renderFocus(){document.getElementById("focus-choices").innerHTML=focusItems.map(x=>`<button class="${x===selectedFocus?"selected":""}" data-focus="${x}"><span class="dot">${x===selectedFocus?"✓":""}</span>${x}</button>`).join("");document.getElementById("timer-label").textContent=(endAt?"进行中":"准备开始")+" · "+selectedFocus;document.querySelectorAll("[data-min]").forEach(b=>b.classList.toggle("active",Number(b.dataset.min)===duration));updateTimerDisplay()}
+function renderTasks(){let s=dayState(),custom=s.custom||[],all=defaultTasks.concat(custom.map((x,i)=>["custom-"+i,x,"自定义任务"]));document.getElementById("habit-date").textContent=new Date().toLocaleDateString("zh-CN",{month:"long",day:"numeric",weekday:"long"});document.getElementById("tasks").innerHTML=all.map(t=>{let done=s.checked.includes(t[0]);return `<button class="task ${done?"done":""}" data-task="${esc(t[0])}"><span class="check">${done?"✓":""}</span><span class="grow"><span class="tasktitle">${esc(t[1])}</span><span class="taskdetail">${esc(t[2])}</span></span></button>`}).join("");let count=all.filter(t=>s.checked.includes(t[0])).length;let complete=count===all.length&&all.length>0;let allState=loadState(),key=todayKey();if(!!allState[key].completed!==complete){allState[key].completed=complete;saveState(allState);if(complete)toast("今天全部完成！日历火花已点亮 ✦")}document.getElementById("progress-label").textContent=`${count}/${all.length} 项完成`;document.getElementById("progress-percent").textContent=Math.round(count/all.length*100)+"%";document.getElementById("progress-bar").style.width=(count/all.length*100)+"%";document.getElementById("custom-list").innerHTML=custom.length?`<p class="tiny" style="margin-top:10px">已添加 ${custom.length} 项自定义任务。点击任务可打卡。</p>`:""}
+function showPage(p){page=p;document.querySelectorAll("[id^=page-]").forEach(s=>s.classList.toggle("hidden",s.id!=="page-"+p));document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===p));if(p==="focus")renderFocus();if(p==="habits")renderTasks();if(p==="calendar")renderCalendar();window.scrollTo(0,0)}
+function toast(msg){let el=document.getElementById("toast");el.textContent=msg;el.classList.remove("hidden");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.add("hidden"),2300)}
+function updateTimerDisplay(){let n=Math.max(0,Math.ceil(remaining)),m=String(Math.floor(n/60)).padStart(2,"0"),s=String(n%60).padStart(2,"0");document.getElementById("timer").textContent=m+":"+s;document.getElementById("timer-start").textContent=endAt?"暂停":"开始";document.getElementById("timer-label").textContent=(endAt?"专注进行中":"准备开始")+" · "+selectedFocus}
+function stopTimer(){if(interval)clearInterval(interval);interval=null;endAt=null}
+function tick(){if(endAt)remaining=Math.max(0,Math.ceil((endAt-Date.now())/1000));updateTimerDisplay();if(remaining<=0&&endAt){stopTimer();updateTimerDisplay();toast("专注完成！休息一下，再继续下一步。");if("vibrate"in navigator)navigator.vibrate([150,80,150])}}
+let calendarCursor=new Date();calendarCursor.setDate(1);
+const dateKey=(y,m,d)=>`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+function completedKeys(){let s=loadState();return Object.keys(s).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)&&s[k]&&s[k].completed===true).sort()}
+function renderCalendar(){let y=calendarCursor.getFullYear(),m=calendarCursor.getMonth(),today=todayKey(),done=completedKeys();document.getElementById("month-title").textContent=`${y}年${m+1}月`;document.getElementById("calendar-weekdays").innerHTML=["日","一","二","三","四","五","六"].map(x=>`<div class="weekday-label">${x}</div>`).join("");let first=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),html="";for(let i=0;i<first;i++)html+='<div class="calendar-day empty"></div>';for(let d=1;d<=days;d++){let k=dateKey(y,m,d),spark=done.includes(k),isToday=k===today;html+=`<div class="calendar-day ${spark?"spark":""} ${isToday?"today":""}" title="${spark?"已完成全部任务":"尚未完成全部任务"}"><span class="day-num">${d}</span>${spark?'<span class="spark-mark">✦</span>':''}</div>`}document.getElementById("calendar-days").innerHTML=html;document.getElementById("stat-total").textContent=done.length;document.getElementById("stat-month").textContent=done.filter(k=>k.startsWith(`${y}-${String(m+1).padStart(2,"0")}`)).length;let streak=0,dt=new Date();if(!done.includes(today))dt.setDate(dt.getDate()-1);while(done.includes(dateKey(dt.getFullYear(),dt.getMonth(),dt.getDate()))){streak++;dt.setDate(dt.getDate()-1)}document.getElementById("stat-streak").textContent=streak+" 天";let best=0,run=0,prev=null;for(let k of done){let cur=new Date(k+"T12:00:00");let gap=prev?(cur-prev)/86400000:0;run=prev&&Math.round(gap)===1?run+1:1;best=Math.max(best,run);prev=cur}document.getElementById("stat-best").textContent=best+" 天"}
+document.getElementById("month-prev").addEventListener("click",()=>{calendarCursor.setMonth(calendarCursor.getMonth()-1);renderCalendar()});document.getElementById("month-next").addEventListener("click",()=>{calendarCursor.setMonth(calendarCursor.getMonth()+1);renderCalendar()});document.getElementById("calendar-to-tasks").addEventListener("click",()=>showPage("habits"));
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.querySelectorAll("[data-day]").forEach(b=>b.addEventListener("click",()=>{dayMode=b.dataset.day;localStorage.setItem("orbit-day",dayMode);renderTimeline()}));
+document.getElementById("to-checklist").addEventListener("click",()=>showPage("habits"));
+document.getElementById("focus-choices").addEventListener("click",e=>{let b=e.target.closest("[data-focus]");if(!b)return;selectedFocus=b.dataset.focus;localStorage.setItem("orbit-focus",selectedFocus);renderFocus()});
+document.getElementById("duration-switch").addEventListener("click",e=>{let b=e.target.closest("[data-min]");if(!b)return;stopTimer();duration=Number(b.dataset.min);remaining=duration*60;localStorage.setItem("orbit-duration",duration);renderFocus()});
+document.getElementById("timer-start").addEventListener("click",()=>{if(endAt){remaining=Math.max(0,Math.ceil((endAt-Date.now())/1000));stopTimer();}else{endAt=Date.now()+remaining*1000;if(interval)clearInterval(interval);interval=setInterval(tick,250)}updateTimerDisplay()});
+document.getElementById("timer-reset").addEventListener("click",()=>{stopTimer();remaining=duration*60;updateTimerDisplay()});
+document.getElementById("tasks").addEventListener("click",e=>{let b=e.target.closest("[data-task]");if(!b)return;let id=b.dataset.task;updateDayState(s=>{s.checked=s.checked.includes(id)?s.checked.filter(x=>x!==id):s.checked.concat(id)});renderTasks();if(page==="calendar")renderCalendar()});
+document.getElementById("reset-tasks").addEventListener("click",()=>{updateDayState(s=>s.checked=[]);renderTasks();if(page==="calendar")renderCalendar();toast("已重置今日打卡")});
+document.getElementById("add-task").addEventListener("click",()=>{let input=document.getElementById("custom-task"),v=input.value.trim();if(!v)return toast("先输入任务内容");updateDayState(s=>s.custom.push(v));input.value="";renderTasks();if(page==="calendar")renderCalendar();toast("任务已添加")});
+document.querySelectorAll("[data-tool]").forEach(b=>b.addEventListener("click",()=>{let msgs={weekly:"请根据我的 IGCSE G10 生活时间表制定本周复习计划。",procrastination:"请帮我制定适合 IGCSE G10 学生的拖延改善系统。",astro:"请帮我制定适合新加坡学生的天文摄影周末计划。"};toast("此工具需要连接 ChatGPT 才能生成内容；当前日程与打卡功能可独立使用。")}));
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&endAt)tick()});
+renderTimeline();renderFocus();renderTasks();renderCalendar();
+if("serviceWorker"in navigator&&location.protocol.startsWith("http"))window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+</script>
+</body>
+</html>
